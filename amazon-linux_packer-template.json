@@ -33,7 +33,7 @@
                 "echo 'No unauthorized access permitted' | sudo tee /etc/motd",
                 "sudo rm /etc/issue",
                 "sudo ln -s /etc/motd /etc/issue",
-                "sudo yum install -y openssh-server openssh-clients elinks screen vim"
+                "sudo yum install -y vim"
             ]
         }
     ]
