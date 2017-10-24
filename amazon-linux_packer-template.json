@@ -1,7 +1,5 @@
 {
     "variables": {
-	"access_key": "{{env `AWS_ACCESS_KEY_ID`}}",
-    	"secret_key": "{{env `AWS_SECRET_ACCESS_KEY`}}",
         "aws_region": "{{env `AWS_REGION`}}",
         "aws_ami_name": "amazon-linux_{{isotime \"02Jan2006\"}}"
     },
@@ -11,7 +9,6 @@
         "region": "{{user `aws_region`}}",
         "instance_type": "t2.micro",
         "ssh_username": "ec2-user",
-	"ssh_timeout": "10m",
         "ami_name": "{{user `aws_ami_name`}}",
         "ami_description": "Customized Amazon Linux",
         "associate_public_ip_address": "true",
@@ -19,9 +16,9 @@
             "filters": {
                 "virtualization-type": "hvm",
                 "name": "amzn-ami*-ebs",
-		"root-device-type": "ebs"
+                "root-device-type": "ebs"
             },
-	    "owners": ["137112412989", "591542846629", "801119661308", "102837901569", "013907871322", "206029621532", "286198878708", "443319210888"],
+            "owners": ["137112412989", "591542846629", "801119661308", "102837901569", "013907871322", "206029621532", "286198878708", "443319210888"],
             "most_recent": true
         }
     }],
@@ -31,11 +28,11 @@
             "type": "shell",
             "inline": [
                 "sudo yum update -y",
-		"sudo /usr/sbin/update-motd --disable",
+                "sudo /usr/sbin/update-motd --disable",
                 "echo 'No unauthorized access permitted' | sudo tee /etc/motd",
                 "sudo rm /etc/issue",
                 "sudo ln -s /etc/motd /etc/issue",
-		"which scp"
+                "sudo yum install -y elinks screen"
             ]
         }
     ]
