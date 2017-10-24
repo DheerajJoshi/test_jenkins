@@ -32,7 +32,7 @@
 		"sudo /usr/sbin/update-motd --disable",
                 "echo 'No unauthorized access permitted' | sudo tee /etc/motd",
                 "sudo rm /etc/issue",
-                "sudo ln -s /etc/motd /etc/issue"
+                "sudo ln -s /etc/motd /etc/issue",
 		"which scp"
             ]
         }
