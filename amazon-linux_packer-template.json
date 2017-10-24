@@ -32,8 +32,8 @@
 				"sudo /usr/sbin/update-motd --disable",
                 "echo 'No unauthorized access permitted' | sudo tee /etc/motd",
                 "sudo rm /etc/issue",
-                "sudo ln -s /etc/motd /etc/issue",
-                "sudo yum install -y openssh-server openssh-client openssh-clients vim"
+                "sudo ln -s /etc/motd /etc/issue"
+                //"sudo yum install -y openssh-server openssh-client openssh-clients vim"
             ]
         }
     ]
