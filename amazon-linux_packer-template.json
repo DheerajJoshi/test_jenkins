@@ -8,7 +8,7 @@
         "type": "amazon-ebs",
         "region": "{{user `aws_region`}}",
         "instance_type": "t2.micro",
-        "ssh_username": "ec2-user",
+        "ssh_username": "ubuntu",
         "ami_name": "{{user `aws_ami_name`}}",
         "ami_description": "Customized Amazon Linux",
         "associate_public_ip_address": "true",
@@ -20,10 +20,6 @@
             "type": "shell",
             "inline": [
                 "sudo apt-get update -y",
-                "sudo /usr/sbin/update-motd --disable",
-                "echo 'No unauthorized access permitted' | sudo tee /etc/motd",
-                "sudo rm /etc/issue",
-                "sudo ln -s /etc/motd /etc/issue",
                 "sudo apt-get install -y openssh-clients openssh-client openssh-server"
             ]
         }
