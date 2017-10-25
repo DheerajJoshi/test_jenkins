@@ -1,6 +1,7 @@
 {
     "variables": {
-        "aws_region": "{{env `AWS_REGION`}}"
+        "aws_region": "{{env `AWS_REGION`}}",
+        "aws_ami_name": "ubuntu-server_{{isotime \"02Jan2006\"}}"
     },
 
     "builders": [{
